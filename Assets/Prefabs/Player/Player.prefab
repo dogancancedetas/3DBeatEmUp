@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6105556432051096550}
   - component: {fileID: 5061759402149088051}
   - component: {fileID: 6332224631673561809}
+  - component: {fileID: 5692214745181491267}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -78,6 +79,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 3
   zSpeed: 1.5
+--- !u!114 &5692214745181491267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969026568273327196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b66ce55169f4546b0293893f87ac4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isPlayer: 1
 --- !u!1 &3605592131268668931
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863731958b770764fa3929bed3732be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  radius: 1
+  damage: 2
+  isPlayer: 1
+  isEnemy: 0
+  hitFXPrefab: {fileID: 115594, guid: efd3011863918584d94591e177fa8d29, type: 3}
 --- !u!1 &4062790934526489602
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +187,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863731958b770764fa3929bed3732be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  radius: 1
+  damage: 2
+  isPlayer: 1
+  isEnemy: 0
+  hitFXPrefab: {fileID: 115594, guid: efd3011863918584d94591e177fa8d29, type: 3}
 --- !u!1 &4234831296178610115
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +238,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863731958b770764fa3929bed3732be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  radius: 1
+  damage: 2
+  isPlayer: 1
+  isEnemy: 0
+  hitFXPrefab: {fileID: 115594, guid: efd3011863918584d94591e177fa8d29, type: 3}
 --- !u!1 &5762410272610264531
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +289,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863731958b770764fa3929bed3732be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  radius: 1
+  damage: 2
+  isPlayer: 1
+  isEnemy: 0
+  hitFXPrefab: {fileID: 115594, guid: efd3011863918584d94591e177fa8d29, type: 3}
 --- !u!1001 &6877054824911952338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,6 +396,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400092, guid: 68ff77d4e131db34586dc6f268e92dca, type: 3}
   m_PrefabInstance: {fileID: 6877054824911952338}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &692900774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877054824911920860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6abd3644d6cfa545beb7d8b15af1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftArmAttackPoint: {fileID: 4062790934526489602}
+  rightArmAttackPoint: {fileID: 4234831296178610115}
+  leftLegAttackPoint: {fileID: 5762410272610264531}
+  rightLegAttackPoint: {fileID: 3605592131268668931}
 --- !u!114 &1169935899340161630
 MonoBehaviour:
   m_ObjectHideFlags: 0

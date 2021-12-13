@@ -65,11 +65,13 @@ public class CharacterAnimation : MonoBehaviour
 
     public void KnockDown()
     {
+      
         anim.SetTrigger(AnimationTags.KNOCK_DOWN_TRIGGER);
     }
 
     public void StandUp()
     {
+       
         anim.SetTrigger(AnimationTags.STAND_UP_TRIGGER);
     }
 

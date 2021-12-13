@@ -363,30 +363,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 157790415496594126, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: hitFX
-      value: 
-      objectReference: {fileID: 115594, guid: efd3011863918584d94591e177fa8d29, type: 3}
-    - target: {fileID: 157790415496594126, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: isPlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 157790415496594126, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: collisionLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 874401764206075444, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: hitFX
-      value: 
-      objectReference: {fileID: 115594, guid: efd3011863918584d94591e177fa8d29, type: 3}
-    - target: {fileID: 874401764206075444, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: isPlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 874401764206075444, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: collisionLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 1969026568273327196, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -435,30 +411,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2597462954662195748, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: hitFX
-      value: 
-      objectReference: {fileID: 115594, guid: efd3011863918584d94591e177fa8d29, type: 3}
-    - target: {fileID: 2597462954662195748, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: isPlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2597462954662195748, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: collisionLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 4109624808920986170, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: hitFX
-      value: 
-      objectReference: {fileID: 115594, guid: efd3011863918584d94591e177fa8d29, type: 3}
-    - target: {fileID: 4109624808920986170, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: isPlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4109624808920986170, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
-      propertyPath: collisionLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
 --- !u!1001 &4010749494524681834
@@ -468,6 +420,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1299169452690965192, guid: afdf2541051ffce479a48de68f9e8f26, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7242403854026365572, guid: afdf2541051ffce479a48de68f9e8f26, type: 3}
       propertyPath: m_RootOrder
       value: 5

@@ -8,12 +8,13 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody myBody;
     private Transform playerTarget;
 
-    public float speed = 5;
-    public float attackDistance, chasePlayerAfterAttack = 1;
+    public float speed = 1.8f;
+    public float attackDistance = 1;
+    private float chasePlayerAfterAttack = 1;
     private float currentAttackTime;
-    private float defaultAttackTime =2;
-    private bool followPlayer, attackPlayer;
-    
+    private float defaultAttackTime = 2;
+    internal bool followPlayer, attackPlayer;
+
     void Awake()
     {
         enemyAnim = GetComponentInChildren<CharacterAnimation>();

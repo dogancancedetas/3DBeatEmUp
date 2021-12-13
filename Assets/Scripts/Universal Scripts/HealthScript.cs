@@ -35,7 +35,6 @@ public class HealthScript : MonoBehaviour
         {
             animationScript.Death();
             characterDied = true;
-            Destroy(gameObject, 3);
 
             //if is the player deactivate enemy script
             if (isPlayer)

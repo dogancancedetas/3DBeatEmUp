@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
 
     public float speed = 1.8f;
     public float attackDistance = 1;
-    private float chasePlayerAfterAttack = 1;
+    public float chasePlayerAfterAttack = 1;
     private float currentAttackTime;
     private float defaultAttackTime = 2;
     internal bool followPlayer, attackPlayer;
@@ -53,9 +53,7 @@ public class EnemyMovement : MonoBehaviour
             myBody.velocity = transform.forward * speed;
 
             if (myBody.velocity.sqrMagnitude != 0)
-            {
                 enemyAnim.Walk(true);
-            }
         }
         else if (Vector3.Distance(transform.position, playerTarget.position) <= attackDistance)
         {
@@ -71,9 +69,7 @@ public class EnemyMovement : MonoBehaviour
     {
         //if we are not supposed to attack the player
         if (!attackPlayer)
-        {
             return;
-        }
 
         currentAttackTime += Time.deltaTime;
 

@@ -5,12 +5,11 @@ using UnityEngine;
 public class AttackUniversal : MonoBehaviour
 {
     public LayerMask collisionLayer;
+    public GameObject hitFXPrefab;
+
     public float radius = 1;
     public float damage = 2;
-
     public bool isPlayer, isEnemy;
-
-    public GameObject hitFXPrefab;
 
     // Update is called once per frame
     void Update()
@@ -32,25 +31,22 @@ public class AttackUniversal : MonoBehaviour
                 hitFXPos.y += 1.3f;
 
                 if (hit[0].transform.forward.x > 0)
-                {
                     hitFXPos.x += 0.3f;
-                }
                 else if (hit[0].transform.forward.x < 0)
-                {
                     hitFXPos.x -= 0.3f;
-                }
 
                 Instantiate(hitFXPrefab, hitFXPos, Quaternion.identity);
 
                 if (gameObject.CompareTag(Tags.LEFT_ARM_TAG) || gameObject.CompareTag(Tags.LEFT_LEG_TAG))
-                {
                     hit[0].GetComponent<HealthScript>().ApplyDamage(damage, true);
-                }
                 else
-                {
                     hit[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
-                }
             }
+
+            //if is enemy
+            if (isEnemy)
+                hit[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
+
             gameObject.SetActive(false);
         }
     }

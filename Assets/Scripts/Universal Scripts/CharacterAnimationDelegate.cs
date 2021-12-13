@@ -6,18 +6,17 @@ public class CharacterAnimationDelegate : MonoBehaviour
 {
     public GameObject leftArmAttackPoint, rightArmAttackPoint, leftLegAttackPoint, rightLegAttackPoint;
 
-    public float standUpTimer = 2;
-
     private CharacterAnimation animationScript;
 
     private AudioSource audioSource;
-
     [SerializeField]
     private AudioClip whooshSound, fallSound, groundHitSound, deadSound;
 
     private EnemyMovement enemyMovement;
 
     private ShakeCamera shakeCamera;
+
+    public float standUpTimer = 2;
 
     private void Awake()
     {
@@ -28,60 +27,51 @@ public class CharacterAnimationDelegate : MonoBehaviour
         shakeCamera = GameObject.FindWithTag(Tags.MAIN_CAMERA_TAG).GetComponent<ShakeCamera>();
 
         if (gameObject.CompareTag(Tags.ENEMY_TAG))
-        {
             enemyMovement = GetComponentInParent<EnemyMovement>();
-        }
     }
 
     void LeftArmAttackOn()
     {
         leftArmAttackPoint.SetActive(true);
     }
+
     void LeftArmAttackOff()
     {
         if (leftArmAttackPoint.activeInHierarchy)
-        {
             leftArmAttackPoint.SetActive(false);
-        }
     }
+
     void RightArmAttackOn()
     {
         rightArmAttackPoint.SetActive(true);
     }
+
     void RightArmAttackOff()
     {
         if (rightArmAttackPoint.activeInHierarchy)
-        {
             rightArmAttackPoint.SetActive(false);
-        }
     }
 
     void LeftLegAttackOn()
     {
         leftLegAttackPoint.SetActive(true);
-
     }
 
     void LeftLegAttackOff()
     {
         if (leftLegAttackPoint.activeInHierarchy)
-        {
             leftLegAttackPoint.SetActive(false);
-        }
     }
 
     void RightLegAttackOn()
     {
         rightLegAttackPoint.SetActive(true);
-
     }
 
     void RightLegAttackOff()
     {
         if (rightLegAttackPoint.activeInHierarchy)
-        {
             rightLegAttackPoint.SetActive(false);
-        }
     }
 
     void TagLeftArm()
@@ -140,6 +130,17 @@ public class CharacterAnimationDelegate : MonoBehaviour
         audioSource.Play();
     }
 
+    void CharacterDied()
+    {
+        Invoke("DeactivateGameObject", 2f);
+    }
+
+    void DeactivateGameObject()
+    {
+        EnemyManager.instance.SpawnEnemy();
+        gameObject.SetActive(false);
+    }
+
     void DisableMovement()
     {
         enemyMovement.enabled = false;
@@ -150,8 +151,8 @@ public class CharacterAnimationDelegate : MonoBehaviour
     void EnableMovement()
     {
         enemyMovement.enabled = true;
-        transform.parent.gameObject.layer = 7;
 
+        transform.parent.gameObject.layer = 7;
     }
 
     void ShakeCameraOnFall()

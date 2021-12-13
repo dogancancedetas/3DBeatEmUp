@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ShakeCamera : MonoBehaviour
 {
+    private Vector3 startPosition;
+
     public float power = 0.2f;
     public float duration = 0.2f;
     public float slowDownAmount = 1;
-    private bool shouldShake;
     private float initialDuration;
-
-    private Vector3 startPosition;
+    private bool shouldShake;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +46,7 @@ public class ShakeCamera : MonoBehaviour
 
     public bool ShouldShake
     {
-        get 
+        get
         {
             return shouldShake;
         }

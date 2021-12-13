@@ -15,11 +15,11 @@ public enum ComboState
 public class PlayerAttack : MonoBehaviour
 {
     private CharacterAnimation playerAnim;
+    private ComboState currentComboState;
+
     private bool activateTimerToReset;
     private float defaultComboTimer = 0.4f;
     private float currentComboTimer;
-
-    private ComboState currentComboState;
 
     void Awake()
     {
@@ -27,7 +27,6 @@ public class PlayerAttack : MonoBehaviour
     }
 
     // Start is called before the first frame update
-
     private void Start()
     {
         currentComboTimer = defaultComboTimer;
@@ -53,17 +52,13 @@ public class PlayerAttack : MonoBehaviour
             currentComboTimer = defaultComboTimer;
 
             if (currentComboState == ComboState.PUNCH_1)
-            {
                 playerAnim.Punch_1();
-            }
+
             if (currentComboState == ComboState.PUNCH_2)
-            {
                 playerAnim.Punch_2();
-            }
+
             if (currentComboState == ComboState.PUNCH_3)
-            {
                 playerAnim.Punch_3();
-            }
         }
 
         if (Input.GetKeyDown(KeyCode.X))
@@ -75,26 +70,19 @@ public class PlayerAttack : MonoBehaviour
 
             //if the current combo state is None, or punch1 or punch2 then we can set current combo state to kick1 to chain the combo
             if (currentComboState == ComboState.NONE || currentComboState == ComboState.PUNCH_1 || currentComboState == ComboState.PUNCH_2)
-            {
                 currentComboState = ComboState.KICK_1;
-            }
             else if (currentComboState == ComboState.KICK_1)
-            {
                 //move to kick2
                 currentComboState++;
-            }
 
             activateTimerToReset = true;
             currentComboTimer = defaultComboTimer;
 
             if (currentComboState == ComboState.KICK_1)
-            {
                 playerAnim.Kick_1();
-            }
+
             if (currentComboState == ComboState.KICK_2)
-            {
                 playerAnim.Kick_2();
-            }
         }
     }
 

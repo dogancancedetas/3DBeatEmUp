@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -299,6 +300,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 4, y: 180, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed18dee5da436a04d92191dbaf5fae09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 0.2
+  duration: 0.2
+  slowDownAmount: 1
 --- !u!1001 &1824438984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -363,6 +379,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 692900774, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
+      propertyPath: deadSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ebff52cf65df1f43b3dd5968baa7225, type: 3}
+    - target: {fileID: 692900774, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
+      propertyPath: fallSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f8d6a1287edeac247897a31fdad8b5a2, type: 3}
+    - target: {fileID: 692900774, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
+      propertyPath: whooshSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c21e9548ae73d094cbddf59c083faa95, type: 3}
+    - target: {fileID: 692900774, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
+      propertyPath: groundHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7afef0fdbb1316943a51d8e187571fc3, type: 3}
     - target: {fileID: 1969026568273327196, guid: 3b2c49330db9e8743929119152724c3b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -420,10 +452,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1299169452690965192, guid: afdf2541051ffce479a48de68f9e8f26, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7242403854026365572, guid: afdf2541051ffce479a48de68f9e8f26, type: 3}
       propertyPath: m_RootOrder
       value: 5

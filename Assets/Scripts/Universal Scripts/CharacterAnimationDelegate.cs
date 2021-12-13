@@ -10,9 +10,27 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     private CharacterAnimation animationScript;
 
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private AudioClip whooshSound, fallSound, groundHitSound, deadSound;
+
+    private EnemyMovement enemyMovement;
+
+    private ShakeCamera shakeCamera;
+
     private void Awake()
     {
         animationScript = GetComponent<CharacterAnimation>();
+
+        audioSource = GetComponent<AudioSource>();
+
+        shakeCamera = GameObject.FindWithTag(Tags.MAIN_CAMERA_TAG).GetComponent<ShakeCamera>();
+
+        if (gameObject.CompareTag(Tags.ENEMY_TAG))
+        {
+            enemyMovement = GetComponentInParent<EnemyMovement>();
+        }
     }
 
     void LeftArmAttackOn()
@@ -95,5 +113,49 @@ public class CharacterAnimationDelegate : MonoBehaviour
     {
         yield return new WaitForSeconds(standUpTimer);
         animationScript.StandUp();
+    }
+    public void AttackFXSound()
+    {
+        audioSource.volume = 0.2f;
+        audioSource.clip = whooshSound;
+        audioSource.Play();
+    }
+
+    void CharacterDiedSound()
+    {
+        audioSource.volume = 1;
+        audioSource.clip = deadSound;
+        audioSource.Play();
+    }
+
+    void EnemyKnockedDown()
+    {
+        audioSource.clip = fallSound;
+        audioSource.Play();
+    }
+
+    void EnemyHitGround()
+    {
+        audioSource.clip = groundHitSound;
+        audioSource.Play();
+    }
+
+    void DisableMovement()
+    {
+        enemyMovement.enabled = false;
+
+        transform.parent.gameObject.layer = 0;
+    }
+
+    void EnableMovement()
+    {
+        enemyMovement.enabled = true;
+        transform.parent.gameObject.layer = 7;
+
+    }
+
+    void ShakeCameraOnFall()
+    {
+        shakeCamera.ShouldShake = true;
     }
 }
